@@ -9,53 +9,73 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
+      background-color: #0a0f1a; /* biru gelap */
+      color: #e0e0ff;
       text-align: center;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 20px;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      padding: 25px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      box-shadow: 0 0 20px #00f0ff;
     }
     header img {
-      height: 50px;
+      height: 60px;
       border-radius: 50%;
+      box-shadow: 0 0 15px #00f0ff;
     }
     header h1 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       margin: 0;
-      font-weight: 600;
+      font-weight: 700;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
     }
     main {
-      padding: 30px 20px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
     h2 {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-bottom: 20px;
+      color: #80dfff;
+      text-shadow: 0 0 8px #00f0ff;
     }
-    button {
-      background-color: #00c300;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      border-radius: 8px;
+    .btn {
+      background-color: transparent;
+      color: #00f0ff;
+      border: 2px solid #00f0ff;
+      padding: 14px 28px;
+      border-radius: 10px;
       font-size: 1em;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00f0ff;
     }
-    button:hover {
-      background-color: #009e00;
+    .btn:hover {
+      background-color: #00f0ff;
+      color: #0a0f1a;
+      box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 0.8em;
       color: #888;
+      text-shadow: 0 0 5px #00f0ff;
+    }
+    .card {
+      background-color: #111a2b;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px #00f0ff;
+      width: 90%;
+      max-width: 400px;
     }
   </style>
 </head>
@@ -66,16 +86,17 @@
   </header>
 
   <main>
-    <h2>Halo, <span id="name">pengguna LINE</span> 👋</h2>
-    <button onclick="sendMessage()">Kirim Pesan ke Chat</button>
-    <button onclick="liff.closeWindow()">Tutup LIFF</button>
-    <button onclick="forceLogin()">Login Ulang dengan Izin Kirim Pesan</button>
-    <!-- Tombol Website -->
-    <button onclick="openWebsite()">Website</button>
+    <div class="card">
+      <h2>Selamat datang, <span id="name">pengguna LINE</span> 👋</h2>
+      <button class="btn" onclick="sendMessage()">💬 Kirim Pesan ke Chat</button>
+      <button class="btn" onclick="liff.closeWindow()">❌ Tutup LIFF</button>
+      <button class="btn" onclick="forceLogin()">🔑 Login Ulang</button>
+      <button class="btn" onclick="openWebsite()">🌐 Website</button>
+    </div>
   </main>
 
   <footer>
-    &copy; 2026 Hb Digital Solution. All rights reserved.
+    &copy; 2026 Hackbots. All rights reserved.
   </footer>
 
   <script>
